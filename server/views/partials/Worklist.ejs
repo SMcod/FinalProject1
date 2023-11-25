@@ -1,0 +1,25 @@
+<%- include partials/header.ejs%> <%- include partials/main_nav.ejs %>
+<!-- Main Content -->
+<main class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-10">
+      <h1>To Do List</h1>
+      <br />
+      <table class="table table-bordered table-striped table-hover">
+        <tr class="d-flex">
+          <th class="text-center col-2">Name</th>
+          <th class="text-center col-2">Priority</th>
+          <th class="text-center col-8">Notes</th>
+        </tr>
+        <% for (let count=0; count < Worklistlist.length; count ++) { %>
+        <tr class="d-flex">
+          <td class="text-center col-2"><%= Worklistlist[count].Name %></td>
+          <td class="text-center col-2"><%= Worklistlist[count].Priority %></td>
+          <td class="text-center col-8"><%= Worklistlist[count].Notes %></td>
+        </tr>
+        <%} %>
+      </table>
+    </div>
+  </div>
+</main>
+<%- include partials/bottom_nav.ejs %> <%- include partials/footer.ejs %>
